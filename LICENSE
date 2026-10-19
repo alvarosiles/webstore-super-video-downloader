@@ -1,0 +1,26 @@
+Copyright © 2026 Alvaro Siles Estrada. Todos los derechos reservados.
+Copyright © 2026 Alvaro Siles Estrada. All rights reserved.
+
+Este repositorio contiene el sitio web oficial de Super Video Downloader:
+código HTML, CSS y JavaScript, diseño, textos, capturas de pantalla, iconos,
+imágenes promocionales y demás recursos gráficos.
+
+Queda prohibido copiar, reproducir, modificar, distribuir, publicar o crear
+obras derivadas de cualquier parte de este sitio, total o parcialmente, sin
+autorización previa y por escrito del titular.
+
+Ver o enlazar el sitio publicado no requiere autorización.
+
+EXCEPCIÓN — software descargable
+El paquete de la extensión incluido en "extension/"
+(super-video-downloader-v*.zip) es software distribuido bajo la licencia MIT,
+según consta en su repositorio de origen:
+https://github.com/alvarosiles/super-video-downloader
+Ese paquete incluye además componentes de terceros (ffmpeg.wasm) sujetos a
+sus propias licencias. La presente reserva de derechos no limita los
+permisos que esas licencias conceden.
+
+"Super Video Downloader", su nombre y su icono son identificadores del
+proyecto de Alvaro Siles Estrada.
+
+Contacto: alvarosiles.developer@gmail.com

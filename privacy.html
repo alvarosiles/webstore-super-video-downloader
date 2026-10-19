@@ -1,9 +1,18 @@
 <!DOCTYPE html>
+<!--
+  Super Video Downloader — Política de Privacidad
+  © 2026 Alvaro Siles Estrada. Todos los derechos reservados.
+-->
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Política de Privacidad — Super Video Downloader</title>
+<meta name="description" content="Política de privacidad de Super Video Downloader: todo el procesamiento ocurre en tu navegador y ningún dato personal se envía a servidores externos." />
+<meta name="author" content="Alvaro Siles Estrada" />
+<meta name="copyright" content="© 2026 Alvaro Siles Estrada. Todos los derechos reservados." />
+<link rel="canonical" href="https://alvarosiles.github.io/webstore-super-video-downloader/privacy.html" />
+<link rel="icon" type="image/png" href="assets/icon32.png" />
 <style>
   :root {
     --bg: #0f1012; --card: #1a1c1e; --text: #f1f3f4; --muted: #9aa0a6;
@@ -33,16 +42,20 @@
   code { background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
   a { color: var(--accent); }
   .highlight { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0; }
-  footer { margin-top: 60px; color: var(--muted); font-size: 13px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 600; margin-bottom: 28px; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  footer a { color: inherit; }
+  footer a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <a class="brand" href="./"><img src="assets/icon128.png" alt="" />Super Video Downloader</a>
   <header>
-    <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></span>
     <h1>Política de Privacidad</h1>
   </header>
-  <p class="updated">Super Video Downloader · Última actualización: julio de 2026</p>
+  <p class="updated">Vigente desde: julio de 2026 · Última actualización: 18 de octubre de 2026 · Versión de la extensión: 1.0.0</p>
 
   <div class="highlight">
     <strong>Resumen:</strong> Super Video Downloader no recolecta, almacena
@@ -78,6 +91,12 @@
     usa analítica ni SDKs de terceros, y no comparte información con
     nadie, incluida la persona desarrolladora.
   </p>
+  <p>
+    Para mostrar el tamaño de un video y descargarlo, la extensión hace
+    peticiones directamente al servidor que aloja ese video (el mismo al
+    que ya accede tu navegador al reproducirlo). No interviene ningún
+    servidor intermedio.
+  </p>
 
   <h2>Qué NO hace</h2>
   <ul>
@@ -99,14 +118,15 @@
     <tr><td><code>webNavigation</code></td><td>Limpiar streams detectados al cambiar de página.</td></tr>
     <tr><td><code>declarativeNetRequest</code></td><td>Fijar temporalmente la cabecera Referer/Origin al pedir un manifiesto HLS.</td></tr>
     <tr><td><code>offscreen</code></td><td>Ejecutar ffmpeg.wasm para reconstruir streams HLS.</td></tr>
+    <tr><td><code>contextMenus</code></td><td>Opción de descarga en el menú contextual (clic derecho).</td></tr>
     <tr><td><code>host_permissions: &lt;all_urls&gt;</code></td><td>Detectar videos en cualquier sitio que visites — no hay una lista fija de páginas soportadas.</td></tr>
   </table>
 
   <h2>Cómo borrar tus datos</h2>
   <p>
-    Podés borrar el historial de descargas en cualquier momento desde el
+    Puedes borrar el historial de descargas en cualquier momento desde el
     popup de la extensión o la página de Opciones. Para borrar toda la
-    configuración guardada, alcanza con <strong>desinstalar la
+    configuración guardada, basta con <strong>desinstalar la
     extensión</strong> — Chrome elimina automáticamente todo su
     almacenamiento local al hacerlo.
   </p>
@@ -123,7 +143,10 @@
     Repositorio: <a href="https://github.com/alvarosiles/super-video-downloader">github.com/alvarosiles/super-video-downloader</a>
   </p>
 
-  <footer>Super Video Downloader — código abierto bajo licencia MIT.</footer>
+  <footer>
+    <span>© 2026 Alvaro Siles Estrada. Todos los derechos reservados.</span>
+    <span><a href="./">Inicio</a> · <a href="https://github.com/alvarosiles/super-video-downloader" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
 </div>
 </body>
 </html>

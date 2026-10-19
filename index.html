@@ -1,12 +1,30 @@
 <!DOCTYPE html>
+<!--
+  Super Video Downloader — sitio web oficial
+  © 2026 Alvaro Siles Estrada. Todos los derechos reservados.
+  El diseño, los textos y las imágenes de este sitio no pueden copiarse ni
+  reutilizarse sin autorización previa por escrito del autor.
+-->
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Super Video Downloader</title>
+<title>Super Video Downloader — Descarga videos y streams HLS en Chrome</title>
 <meta name="description" content="Extensión Manifest V3 para Chrome y navegadores Chromium que detecta videos de enlace directo y streams HLS sin cifrar en la página actual y los descarga localmente con ffmpeg.wasm." />
+<meta name="author" content="Alvaro Siles Estrada" />
+<meta name="copyright" content="© 2026 Alvaro Siles Estrada. Todos los derechos reservados." />
 <meta name="theme-color" content="#070b16" />
-<link rel="icon" type="image/png" href="../assets/icons/icon32.png" />
+<link rel="canonical" href="https://alvarosiles.github.io/webstore-super-video-downloader/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="Super Video Downloader" />
+<meta property="og:title" content="Super Video Downloader — Descarga videos y streams HLS en Chrome" />
+<meta property="og:description" content="Detecta los videos de la página, incluidos los streams HLS, y descárgalos con un clic. Todo se procesa en tu navegador." />
+<meta property="og:url" content="https://alvarosiles.github.io/webstore-super-video-downloader/" />
+<meta property="og:image" content="https://alvarosiles.github.io/webstore-super-video-downloader/assets/promo-marquee.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="assets/icon32.png" />
+<link rel="apple-touch-icon" href="assets/icon128.png" />
 <style>
   :root {
     --bg: #070b16;
@@ -538,6 +556,9 @@
   .foot ul a { color: var(--text-2); font-size: 14.5px; }
   .foot ul a:hover { color: var(--text); }
   .foot p { color: var(--text-2); font-size: 14.5px; max-width: 380px; }
+  .foot__legal { margin: 36px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--text-3); max-width: 860px; }
+  .foot__bottom a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .foot__bottom a:hover { color: var(--text); }
   .foot__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text-3); }
 
   .to-top {
@@ -651,7 +672,7 @@
 <header class="nav" id="nav">
   <div class="container nav__inner">
     <a class="brand" href="#inicio" aria-label="Super Video Downloader — inicio">
-      <img src="../assets/icons/icon128.png" alt="" width="32" height="32" />
+      <img src="assets/icon128.png" alt="" width="32" height="32" />
       <span>Super Video Downloader</span>
     </a>
     <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
@@ -702,7 +723,7 @@
           <div class="dots"><i></i><i></i><i></i></div>
           <div class="url">https://sitio-de-ejemplo.test/webinar</div>
           <div class="ext-icon" title="Badge con el número de videos detectados">
-            <img src="../assets/icons/icon32.png" alt="" width="24" height="24" />
+            <img src="assets/icon32.png" alt="" width="24" height="24" />
             <b>2</b>
           </div>
         </div>
@@ -755,34 +776,34 @@
     <div class="section-head reveal">
       <p class="eyebrow">Demostración visual</p>
       <h2>El popup, la reconstrucción HLS y la configuración</h2>
-      <p class="lead">Las imágenes son los recursos de la ficha de tienda incluidos en <code>store-assets/</code>. A la derecha, una tarjeta interactiva recorre los estados reales que puede tener cada video en el popup.</p>
+      <p class="lead">Capturas de la extensión funcionando en Chrome sobre un sitio de pruebas con un video de demostración. A la derecha, una tarjeta interactiva recorre los estados que puede tener cada video en el popup.</p>
     </div>
 
     <div class="demo-grid">
       <div class="reveal">
         <div class="tabs" role="tablist" aria-label="Capturas">
           <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Videos detectados</button>
-          <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Progreso HLS</button>
+          <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Descarga completada</button>
           <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Opciones e historial</button>
           <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Promocional</button>
         </div>
         <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-          <figure class="shot" style="margin:0"><img src="../store-assets/screenshot-1-popup.png" alt="Popup con tres videos detectados: uno 1920×1080 de 86.4 MB, otro con selector MP4 720P y otro completado con botón Reproducir" width="1280" height="800" loading="lazy" /></figure>
-          <div class="shot-caption"><span>Lista de videos con selector de calidad, tamaño, copiar URL y descarga.</span><code>store-assets/screenshot-1-popup.png</code></div>
+          <figure class="shot" style="margin:0"><img src="assets/capturas/01-vista-principal.png" alt="Popup de Super Video Downloader con un video detectado en el sitio de pruebas: 1280×720, 5.8 MB y botón Download; botón de descarga sobre el video" width="1783" height="985" loading="lazy" /></figure>
+          <div class="shot-caption"><span>Video detectado con miniatura, duración, selector de calidad, tamaño y descarga. Arriba a la izquierda del video, el botón que añade la extensión.</span></div>
         </div>
         <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-          <figure class="shot" style="margin:0"><img src="../store-assets/screenshot-2-progress.png" alt="Popup mostrando la reconstrucción de un stream HLS al 63 % a 1.8 MB/s con botón Detener" width="1280" height="800" loading="lazy" /></figure>
-          <div class="shot-caption"><span>Reconstrucción de un stream HLS con porcentaje, velocidad y cancelar.</span><code>store-assets/screenshot-2-progress.png</code></div>
+          <figure class="shot" style="margin:0"><img src="assets/capturas/02-funcionalidad-principal.png" alt="Popup con la descarga completada y el botón verde Reproducir" width="1783" height="985" loading="lazy" /></figure>
+          <div class="shot-caption"><span>Descarga completada: el archivo se abre con Reproducir o se muestra en su carpeta.</span></div>
         </div>
         <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
-          <figure class="shot" style="margin:0"><img src="../store-assets/screenshot-3-options.png" alt="Página de configuración con subcarpeta de descarga, interruptores, tema, idioma e historial" width="1280" height="800" loading="lazy" /></figure>
-          <div class="shot-caption"><span>Página de opciones: subcarpeta, nombre automático, notificaciones, tema, idioma e historial.</span><code>store-assets/screenshot-3-options.png</code></div>
+          <figure class="shot" style="margin:0"><img src="assets/capturas/03-funcionalidad-complementaria.png" alt="Página de configuración con subcarpeta de descarga, interruptores, tema, idioma e historial con una descarga" width="1783" height="985" loading="lazy" /></figure>
+          <div class="shot-caption"><span>Opciones: subcarpeta, nombre automático, notificaciones, tema, idioma e historial.</span></div>
         </div>
         <div class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
-          <figure class="shot" style="margin:0"><img src="../store-assets/promo-marquee.png" alt="Imagen de marquesina: Descarga videos, incluidos streams HLS, sin instalar nada más" width="1400" height="560" loading="lazy" /></figure>
-          <div class="shot-caption"><span>Imagen de marquesina de la ficha (1400×560).</span><code>store-assets/promo-marquee.png</code></div>
+          <figure class="shot" style="margin:0"><img src="assets/promo-marquee.png" alt="Imagen promocional: Descarga videos, incluidos streams HLS, sin instalar nada más" width="1400" height="560" loading="lazy" /></figure>
+          <div class="shot-caption"><span>Imagen promocional de la extensión.</span></div>
         </div>
-        <p class="disclaimer"><svg><use href="#i-info"/></svg>Las capturas se generaron a partir de los mockups HTML de <code>store-assets/mockup-*.html</code> con nombres y sitios de ejemplo; no corresponden a una sesión con un sitio real.</p>
+        <p class="disclaimer"><svg><use href="#i-info"/></svg>Capturas de la versión 1.0.0 sobre un sitio de pruebas local con un video sintético de demostración.</p>
       </div>
 
       <div class="card sim reveal" aria-labelledby="simTitle">
@@ -1055,7 +1076,6 @@
 ├── <b>store-assets/</b>        <em># capturas y ficha</em>
 ├── <b>docs/</b>                <em># landing + privacidad</em>
 ├── <b>dist/</b>                <em># .zip (ignorado en git)</em>
-├── <b>presentacion web/</b>    <em># esta página</em>
 ├── gen_icons.py
 ├── README.md · PUBLISHING.md
 ├── CHANGELOG.md
@@ -1262,7 +1282,7 @@
 <section id="descargar" style="padding-bottom:0">
   <div class="container">
     <div class="card download-cta reveal">
-      <img src="../assets/icons/icon128.png" alt="" width="88" height="88" class="download-cta__icon" />
+      <img src="assets/icon128.png" alt="" width="88" height="88" class="download-cta__icon" />
       <div class="download-cta__body">
         <p class="eyebrow">Descargar extensión</p>
         <h2 style="margin-bottom:10px">Super Video Downloader v1.0.0</h2>
@@ -1277,12 +1297,12 @@
         <a class="btn btn--primary" href="extension/super-video-downloader-v1.0.0.zip" download>
           <svg><use href="#i-download"/></svg> Descargar extensión
         </a>
-        <a class="btn btn--ghost" href="https://github.com/Apex-Technology-Corporation/super-video-downloader/archive/refs/heads/main.zip">
+        <a class="btn btn--ghost" href="https://github.com/alvarosiles/super-video-downloader/archive/refs/heads/main.zip">
           <svg><use href="#i-github"/></svg> Código fuente (.zip)
         </a>
       </div>
     </div>
-    <div class="note note--info reveal"><svg><use href="#i-info"/></svg><span>"Descargar extensión" entrega <code>extension/super-video-downloader-v1.0.0.zip</code>, guardado junto a esta página. Al descomprimirlo se obtiene la carpeta <code>super-video-downloader/</code>, con <code>manifest.json</code> en su raíz: esa es la carpeta que se elige en <b>Cargar descomprimida</b>. El código fuente de la rama <code>main</code> también se puede descargar desde GitHub.</span></div>
+    <div class="note note--info reveal"><svg><use href="#i-info"/></svg><span>Al descomprimir el paquete se obtiene la carpeta <code>super-video-downloader/</code>, con <code>manifest.json</code> en su raíz: esa es la carpeta que se elige en <b>Cargar descomprimida</b>. El código fuente de la rama <code>main</code> también se puede descargar desde GitHub.</span></div>
   </div>
 </section>
 
@@ -1305,7 +1325,7 @@
           <li><span>Comprueba que aparece "Super Video Downloader 1.0.0" sin errores y fíjala en la barra.</span></li>
           <li><span>Abre una página con un video de enlace directo. El badge mostrará el número detectado.</span></li>
         </ol>
-        <div class="note note--info"><svg><use href="#i-info"/></svg><span>Requiere Chrome 109 o superior (<code>minimum_chrome_version</code>). Según el README, la publicación en Chrome Web Store está pendiente.</span></div>
+        <div class="note note--info"><svg><use href="#i-info"/></svg><span>Requiere Chrome 109 o superior. Mientras la extensión no esté disponible en la Chrome Web Store, la instalación se hace en modo desarrollador.</span></div>
       </div>
       <div class="card reveal">
         <h3 style="margin-bottom:6px">Con los scripts de <code>tools/</code></h3>
@@ -1359,11 +1379,11 @@ powershell -File tools\3-build.ps1<button class="copy" type="button" data-copy="
       <div class="fact"><dt>Nombre</dt><dd>Super Video Downloader</dd></div>
       <div class="fact"><dt>Tipo</dt><dd>Extensión de navegador<small>Manifest V3</small></dd></div>
       <div class="fact"><dt>Versión</dt><dd>1.0.0<small>manifest.json · CHANGELOG 2026-07-16</small></dd></div>
-      <div class="fact"><dt>Licencia</dt><dd>MIT<small>© 2026 alvarosiles</small></dd></div>
+      <div class="fact"><dt>Licencia</dt><dd>MIT<small>Código de la extensión</small></dd></div>
       <div class="fact"><dt>Plataforma</dt><dd>Chromium ≥ 109<small>Chrome, Edge, Brave, Opera</small></dd></div>
       <div class="fact"><dt>Tecnologías</dt><dd>JS · HTML · CSS<small>+ ffmpeg.wasm 0.12</small></dd></div>
       <div class="fact"><dt>Idiomas</dt><dd>Español · English</dd></div>
-      <div class="fact"><dt>Estado</dt><dd>Lista para publicar<small>Chrome Web Store: pendiente según README</small></dd></div>
+      <div class="fact"><dt>Estado</dt><dd>Versión estable 1.0.0<small>En preparación para la Chrome Web Store</small></dd></div>
     </dl>
   </div>
 </section>
@@ -1374,15 +1394,14 @@ powershell -File tools\3-build.ps1<button class="copy" type="button" data-copy="
     <div class="section-head reveal">
       <p class="eyebrow">Documentación y recursos</p>
       <h2>Para seguir leyendo</h2>
-      <p class="lead">Enlaces relativos a los archivos del repositorio. Funcionan al abrir esta página desde su carpeta.</p>
+      <p class="lead">Documentación técnica, privacidad y código fuente de la extensión.</p>
     </div>
     <div class="grid grid--3">
-      <a class="card card--lift res reveal" href="../README.md"><div class="ico"><svg><use href="#i-doc"/></svg></div><div><h3>README</h3><p>Descripción, características, permisos y preguntas frecuentes.</p><span class="path">README.md</span></div></a>
-      <a class="card card--lift res reveal" href="../PUBLISHING.md"><div class="ico"><svg><use href="#i-build"/></svg></div><div><h3>Guía de publicación</h3><p>Paso a paso para el Chrome Web Store Developer Dashboard.</p><span class="path">PUBLISHING.md</span></div></a>
-      <a class="card card--lift res reveal" href="../docs/privacy.html"><div class="ico ico--g"><svg><use href="#i-shield"/></svg></div><div><h3>Política de privacidad</h3><p>Qué datos se tratan (ninguno sale del navegador).</p><span class="path">docs/privacy.html</span></div></a>
-      <a class="card card--lift res reveal" href="../CHANGELOG.md"><div class="ico"><svg><use href="#i-history"/></svg></div><div><h3>Changelog</h3><p>Cambios de la versión 1.0.0.</p><span class="path">CHANGELOG.md</span></div></a>
-      <a class="card card--lift res reveal" href="../store-assets/LISTING.md"><div class="ico ico--y"><svg><use href="#i-layers"/></svg></div><div><h3>Ficha de tienda</h3><p>Descripciones y justificación de permisos listas para pegar.</p><span class="path">store-assets/LISTING.md</span></div></a>
-      <a class="card card--lift res reveal" href="https://github.com/Apex-Technology-Corporation/super-video-downloader" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-github"/></svg></div><div><h3>Repositorio</h3><p>Código fuente en GitHub.</p><span class="path">Apex-Technology-Corporation/super-video-downloader</span></div></a>
+      <a class="card card--lift res reveal" href="https://github.com/alvarosiles/super-video-downloader/blob/main/README.md" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-doc"/></svg></div><div><h3>README</h3><p>Descripción, características, permisos y preguntas frecuentes.</p><span class="path">README.md</span></div></a>
+      <a class="card card--lift res reveal" href="https://github.com/alvarosiles/super-video-downloader/blob/dev/PUBLISHING.md" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-build"/></svg></div><div><h3>Guía de publicación</h3><p>Paso a paso para el Chrome Web Store Developer Dashboard.</p><span class="path">PUBLISHING.md</span></div></a>
+      <a class="card card--lift res reveal" href="privacy.html"><div class="ico ico--g"><svg><use href="#i-shield"/></svg></div><div><h3>Política de privacidad</h3><p>Qué datos se tratan (ninguno sale del navegador).</p><span class="path">privacy.html</span></div></a>
+      <a class="card card--lift res reveal" href="https://github.com/alvarosiles/super-video-downloader/blob/main/LICENSE" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-history"/></svg></div><div><h3>Licencia de la extensión</h3><p>MIT · código fuente abierto.</p><span class="path">LICENSE</span></div></a>
+      <a class="card card--lift res reveal" href="https://github.com/alvarosiles/super-video-downloader" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-github"/></svg></div><div><h3>Repositorio</h3><p>Código fuente en GitHub.</p><span class="path">alvarosiles/super-video-downloader</span></div></a>
     </div>
   </div>
 </section>
@@ -1393,7 +1412,7 @@ powershell -File tools\3-build.ps1<button class="copy" type="button" data-copy="
   <div class="container">
     <div class="foot">
       <div>
-        <a class="brand" href="#inicio"><img src="../assets/icons/icon128.png" alt="" width="32" height="32" /><span>Super Video Downloader</span></a>
+        <a class="brand" href="#inicio"><img src="assets/icon128.png" alt="" width="32" height="32" /><span>Super Video Downloader</span></a>
         <p style="margin-top:14px">Extensión Manifest V3 que detecta videos de enlace directo y streams HLS sin cifrar, y los descarga localmente con ffmpeg.wasm. No elude DRM.</p>
       </div>
       <div>
@@ -1409,17 +1428,17 @@ powershell -File tools\3-build.ps1<button class="copy" type="button" data-copy="
       <div>
         <h4>Recursos</h4>
         <ul>
-          <li><a href="../README.md">README</a></li>
-          <li><a href="../PUBLISHING.md">Publicación</a></li>
-          <li><a href="../docs/privacy.html">Privacidad</a></li>
-          <li><a href="../LICENSE">Licencia MIT</a></li>
-          <li><a href="https://github.com/Apex-Technology-Corporation/super-video-downloader" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/alvarosiles/super-video-downloader/blob/main/README.md" target="_blank" rel="noopener">README</a></li>
+          <li><a href="privacy.html">Privacidad</a></li>
+          <li><a href="https://github.com/alvarosiles/super-video-downloader" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="mailto:alvarosiles.developer@gmail.com">Contacto</a></li>
         </ul>
       </div>
     </div>
+    <p class="foot__legal">Uso responsable: Super Video Downloader está pensado para guardar contenido que tienes derecho a descargar. Respeta los derechos de autor y los términos de servicio de cada sitio. La extensión no elude DRM ni cifrado.</p>
     <div class="foot__bottom">
-      <span>© 2026 alvarosiles · Licencia MIT</span>
-      <span>Super Video Downloader v1.0.0</span>
+      <span>© 2026 Alvaro Siles Estrada. Todos los derechos reservados.</span>
+      <span>Super Video Downloader v1.0.0 · <a href="privacy.html">Privacidad</a> · Sin cookies ni rastreo</span>
     </div>
   </div>
 </footer>
